@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth:sanctum'])->get('/admin', [DashboardController::class, 'index'])->name('dashboard');
+Route::prefix('admin')
+        ->middleware(['auth:sanctum'])
+        ->group(function(){
+          Route::get('/', [DashboardController::class, 'index'])
+                  ->name('dashboard');
+
+          Route::resource('post', PostController::class);
+        });
+
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
