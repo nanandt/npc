@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $items = Post::get();
+        $items = Post::latest()->get();
         return view('pages.home', [
             'items' => $items
         ]);

@@ -76,111 +76,24 @@
                 <h5>BERITA TERBARU</h5>
             </div>
 
-            <!-- Single Blog Post -->
-            <div class="single-blog-post d-flex">
-                <div class="post-thumbnail">
-                    <img src="{{ url('frontend/img/bg-img/4.jpg') }}" alt="">
-                </div>
-                <div class="post-content">
-                    <a href="single-post.html" class="post-title">Global Travel And Vacations Luxury Travel</a>
-                    <div class="post-meta d-flex justify-content-between">
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                    </div>
-                </div>
-            </div>
+						<!-- Single Blog Post -->
 
-            <!-- Single Blog Post -->
-            <div class="single-blog-post d-flex">
+						@foreach ($items as $item)
+            	<div class="single-blog-post d-flex">
                 <div class="post-thumbnail">
                     <img src="{{ url('frontend/img/bg-img/5.jpg') }}" alt="">
                 </div>
                 <div class="post-content">
-                    <a href="single-post.html" class="post-title">Cruising Destination Ideas</a>
+                    <a href="{{ route('artikel', $item->slug) }}" class="post-title">{{ $item->title }}</a>
                     <div class="post-meta d-flex justify-content-between">
                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
                         <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
                         <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Single Blog Post -->
-            <div class="single-blog-post d-flex">
-                <div class="post-thumbnail">
-                    <img src="{{ url('frontend/img/bg-img/5.jpg') }}" alt="">
-                </div>
-                <div class="post-content">
-                    <a href="single-post.html" class="post-title">Cruising Destination Ideas</a>
-                    <div class="post-meta d-flex justify-content-between">
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Blog Post -->
-            <div class="single-blog-post d-flex">
-                <div class="post-thumbnail">
-                    <img src="{{ url('frontend/img/bg-img/5.jpg') }}" alt="">
-                </div>
-                <div class="post-content">
-                    <a href="single-post.html" class="post-title">Cruising Destination Ideas</a>
-                    <div class="post-meta d-flex justify-content-between">
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Blog Post -->
-            <div class="single-blog-post d-flex">
-                <div class="post-thumbnail">
-                    <img src="{{ url('frontend/img/bg-img/6.jpg') }}" alt="">
-                </div>
-                <div class="post-content">
-                    <a href="single-post.html" class="post-title">The Luxury Of Traveling With</a>
-                    <div class="post-meta d-flex justify-content-between">
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Blog Post -->
-            <div class="single-blog-post d-flex">
-                <div class="post-thumbnail">
-                    <img src="{{ url('frontend/img/bg-img/7.jpg') }}" alt="">
-                </div>
-                <div class="post-content">
-                    <a href="single-post.html" class="post-title">Choose The Perfect Accommodations</a>
-                    <div class="post-meta d-flex justify-content-between">
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Blog Post -->
-            <div class="single-blog-post d-flex">
-                <div class="post-thumbnail">
-                    <img src="{{ url('frontend/img/bg-img/8.jpg') }}" alt="">
-                </div>
-                <div class="post-content">
-                    <a href="single-post.html" class="post-title">A Guide To Rocky Mountain Vacations</a>
-                    <div class="post-meta d-flex justify-content-between">
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+							</div>
+							@endforeach
+        	</div>
         </div>
     </div>
 

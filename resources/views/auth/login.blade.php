@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -45,9 +45,9 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-guest-layout> --}}
 
-{{-- @extends('layouts.default')
+@extends('layouts.default')
 
 @section('content')
 <!-- ##### Breadcrumb Area Start ##### -->
@@ -76,12 +76,13 @@
                         </div>
 
                         <form action="{{ route('login') }}" method="POST">
+
                             @csrf
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mr-sm-2">
@@ -104,4 +105,4 @@
         </div>
     </div>
     <!-- ##### Login Area End ##### -->
-@endsection --}}
+@endsection
