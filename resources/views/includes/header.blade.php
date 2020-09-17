@@ -27,7 +27,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li class="nav-item active">
+                                <li class="nav-item {{ request()->is('home') ? ' active' : '' }}">
                                   <a class="nav-link" href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li><a href="#">Cabang Olahraga</a>
@@ -121,7 +121,9 @@
                                 <li><a href="berita.html">Berita</a></li>
                                 <li><a href="jadwal.html">Jadwal Latihan</a></li>
                                 <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li class="nav-item {{ request()->is('contact') ? ' active' : '' }}">
+                                    <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                                </li>
                             </ul>
                         </div>
                         <!-- Nav End -->

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\{DashboardController, PostController};
-use App\Http\Controllers\{HomeController, ArtikelController};
+use App\Http\Controllers\{HomeController, ArtikelController, ContactController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/artikel/{slug}', [ArtikelController::class, 'index'])->name('artikel');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::prefix('admin')
         ->middleware(['auth:sanctum'])
