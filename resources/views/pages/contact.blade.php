@@ -91,7 +91,8 @@
 
                     <!-- Contact Form Area -->
                     <div class="contact-form-area">
-                        <form action="{{ route('') }}" method="post">
+                        <form action="{{ route('contact-create') }}" method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">

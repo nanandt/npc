@@ -23,7 +23,7 @@
   <hr class="sidebar-divider">
 
   <!-- Nav Item - Charts -->
-  <li class="nav-item">
+  <li class="nav-item {{ request()->is('post') ? ' active' : '' }}">
     <a class="nav-link" href="{{ route('post.index') }}">
       <i class="fas fa-fw fa-newspaper"></i>
       <span>Artikel</span></a>
@@ -31,7 +31,7 @@
 
   <li class="nav-item">
     <a class="nav-link" href="{{ route('messages.index') }}">
-      <i class="fas fa-fw fa-newspaper"></i>
+      <i class="fas fa-fw fa-comment-dots"></i>
       <span>Pesan</span></a>
   </li>
 

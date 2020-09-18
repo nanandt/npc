@@ -15,9 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/artikel/{slug}', [ArtikelController::class, 'index'])->name('artikel');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/', [HomeController::class, 'index'])
+				->name('home');
+
+Route::get('/artikel/{slug}', [ArtikelController::class, 'index'])
+				->name('artikel');
+
+Route::get('/contact', [ContactController::class, 'index'])
+				->name('contact');
+
+Route::post('/contact', [ContactController::class, 'create'])
+        ->name('contact-create');
 
 Route::prefix('admin')
         ->middleware(['auth:sanctum'])
