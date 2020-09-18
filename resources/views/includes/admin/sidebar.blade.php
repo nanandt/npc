@@ -29,6 +29,12 @@
       <span>Artikel</span></a>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('messages.index') }}">
+      <i class="fas fa-fw fa-newspaper"></i>
+      <span>Pesan</span></a>
+  </li>
+
   <!-- Nav Item - Tables -->
   <li class="nav-item">
     <a class="nav-link" href="tables.html">

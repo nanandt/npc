@@ -27,7 +27,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li class="nav-item {{ request()->is('home') ? ' active' : '' }}">
+                                <li class="nav-item {{ request()->is('/') ? ' active' : '' }}">
                                   <a class="nav-link" href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li><a href="#">Cabang Olahraga</a>
