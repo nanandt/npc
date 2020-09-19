@@ -33,7 +33,10 @@
                 <td>{{ $item->post_id }}</td>
                 <td>{{ $item->title }}</td>
                 <td>{{ $item->body }}</td>
-                <td>{{ $item->photo }}</td>
+                <td>
+                  <img src="{{ Storage::url($item->photo) }}" alt="" style="width:150px"
+                    class="img-thumbnail">
+                </td>
                 <td>
                   <a href="{{ route('post.edit', $item->post_id) }}" class="btn btn-info">
                     <i class="fa fa-pencil-alt"></i>

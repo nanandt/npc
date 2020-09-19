@@ -10,7 +10,7 @@
 
   <div class="card shadow">
     <div class="card-body">
-      <form action="{{ route('post.store') }}" method="POST">
+      <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="title">Title</label>
@@ -21,15 +21,23 @@
             </div>
           @enderror
         </div>
+
+        <div class="form-group">
+          <label for="photo" class="form-control-label">Foto</label>
+          <input type="file" name="photo" value="{{ old('photo') }}" accept="image/*" class="form-control @error('photo') is-invalid @enderror">
+          @error('photo') <div class="text-muted">{{ $message }}</div> @enderror
+        </div>
+
         <div class="form-group">
           <label for="body">Body</label>
-          <textarea type="text" class="form-control @error('body') is-invalid @enderror" name="body" placeholder="Body" value="{{ old('body') }}"></textarea>
+          <textarea type="text" rows="10" class="form-control @error('body') is-invalid @enderror" name="body" placeholder="Body" value="{{ old('body') }}"></textarea>
           @error('title')
           <div class="invalid-feedback">
             {{ $message }}
             </div>
           @enderror
         </div>
+
         <button type="submit" class="btn btn-primary btn-block">
           Simpan
         </button>

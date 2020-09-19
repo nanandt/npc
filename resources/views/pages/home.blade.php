@@ -81,7 +81,7 @@
 						@foreach ($items as $item)
             	<div class="single-blog-post d-flex">
                 <div class="post-thumbnail">
-                    <img src="{{ url('frontend/img/bg-img/5.jpg') }}" alt="">
+                    <img src="{{ $item->photo ? Storage::url($item->photo) : '' }}">
                 </div>
                 <div class="post-content">
                     <a href="{{ route('artikel', $item->slug) }}" class="post-title">{{ $item->title }}</a>

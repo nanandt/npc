@@ -44,6 +44,9 @@ class PostController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+        $data['photo'] = $request->file('photo')->store(
+            'assets/post', 'public'
+        );
 
         Post::create($data);
         return redirect()->route('post.index');
