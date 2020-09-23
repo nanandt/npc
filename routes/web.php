@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{DashboardController, PostController, MessageController};
+use App\Http\Controllers\Admin\{DashboardController, PostController, MessageController, CabangOlahragaController};
 use App\Http\Controllers\{HomeController, ArtikelController, ContactController};
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +35,7 @@ Route::prefix('admin')
 
           Route::resource('post', PostController::class);
           Route::resource('messages', MessageController::class);
+          Route::resource('cabang-olahraga', CabangOlahragaController::class);
         });
 
 

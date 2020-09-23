@@ -35,6 +35,12 @@
       <span>Pesan</span></a>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('cabang-olahraga.index') }}">
+      <i class="fas fa-fw fa-trophy"></i>
+      <span>Cabang Olahraga</span></a>
+  </li>
+
   <!-- Nav Item - Tables -->
   <li class="nav-item">
     <a class="nav-link" href="tables.html">
