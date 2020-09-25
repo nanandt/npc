@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
 {
-    public function index(Request $request, $slug)
+    public function new(Request $request, $slug)
+
     {
         $item = Post::where('slug', $slug)->firstOrFail();
 

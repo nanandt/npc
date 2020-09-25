@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{DashboardController, PostController, MessageController, CabangOlahragaController};
+use App\Http\Controllers\Admin\{DashboardController, PostController, MessageController, CabangOlahragaController, NewController};
 use App\Http\Controllers\{HomeController, ArtikelController, ContactController};
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])
-				->name('home');
+                ->name('home');
 
-Route::get('/artikel/{slug}', [ArtikelController::class, 'index'])
+Route::get('/artikel/{slug}', [ArtikelController::class, 'new'])
 				->name('artikel');
 
 Route::get('/contact', [ContactController::class, 'index'])
@@ -36,6 +36,7 @@ Route::prefix('admin')
           Route::resource('post', PostController::class);
           Route::resource('messages', MessageController::class);
           Route::resource('cabang-olahraga', CabangOlahragaController::class);
+          Route::resource('news', NewController::class);
         });
 
 

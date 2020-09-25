@@ -6,10 +6,10 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Data Artikel</h1>
-      <a href="{{ route('post.create') }}" class="btn btn-sm btn-primary shadow-sm">
+      <h1 class="h3 mb-0 text-gray-800">Data Berita</h1>
+      <a href="{{ route('news.create') }}" class="btn btn-sm btn-primary shadow-sm">
         <i class="fas fa-plus fa-sm text-white-50"></i>
-        Tambah Artikel
+        Tambah Berita
       </a>
     </div>
 
@@ -21,7 +21,7 @@
               <tr>
                 <th>ID</th>
                 <th>Judul</th>
-                <th>Body</th>
+                <th>Isi Berita</th>
                 <th>Foto</th>
                 <th>Action</th>
               </tr>
@@ -30,18 +30,18 @@
               @forelse ($items as $item)
               {{-- $items diambil dri travelpacakgecontroller di fungsi index --}}
               <tr>
-                <td>{{ $item->post_id }}</td>
-                <td>{{ $item->title }}</td>
-                <td>{{ $item->body }}</td>
+                <td>{{ $item->berita_id }}</td>
+                <td>{{ $item->judul }}</td>
+                <td>{{ $item->isi_berita }}</td>
                 <td>
                   <img src="{{ Storage::url($item->photo) }}" alt="" style="width:150px"
                     class="img-thumbnail">
                 </td>
                 <td>
-                  <a href="{{ route('post.edit', $item->post_id) }}" class="btn btn-info">
+                  <a href="{{ route('news.edit', $item->berita_id) }}" class="btn btn-info">
                     <i class="fa fa-pencil-alt"></i>
                   </a>
-                  <form action="{{ route('post.destroy', $item->post_id) }}" method="POST"
+                  <form action="{{ route('news.destroy', $item->berita_id) }}" method="POST"
                     class="d-inline">
                     @csrf
                     @method('delete')

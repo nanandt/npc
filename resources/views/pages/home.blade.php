@@ -78,21 +78,18 @@
 
 						<!-- Single Blog Post -->
 
-						@foreach ($items as $item)
+				@foreach ($items as $item)
             	<div class="single-blog-post d-flex">
-                <div class="post-thumbnail">
-                    <img src="{{ $item->photo ? Storage::url($item->photo) : '' }}">
-                </div>
-                <div class="post-content">
-                    <a href="{{ route('artikel', $item->slug) }}" class="post-title">{{ $item->title }}</a>
-                    <div class="post-meta d-flex justify-content-between">
-                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
+                    @if($item->photo)
+                    <div class="post-thumbnail">
+                        <img src="{{ $item->photo ? Storage::url($item->photo) : '' }}">
                     </div>
-                </div>
-							</div>
-							@endforeach
+                    @endif
+                    <div class="post-content">
+                        <a href="{{ route('artikel', $item->slug) }}" class="post-title">{{ $item->title }}</a>
+                    </div>
+				</div>
+				@endforeach
         	</div>
         </div>
     </div>
@@ -133,26 +130,6 @@
                                 <a href="video-post.html" class="post-title">A Closer Look At Our Front Porch Items From Lowe’login.php</a>
                                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
                             </div>
-                            <!-- Post Share Area -->
-                            <div class="post-share-area d-flex align-items-center justify-content-between">
-                                <!-- Post Meta -->
-                                <div class="post-meta pl-3">
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                                </div>
-                                <!-- Share Info -->
-                                <div class="share-info">
-                                    <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                    <!-- All Share Buttons -->
-                                    <div class="all-share-btn d-flex">
-                                        <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                        <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                        <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -161,20 +138,16 @@
                         <div class="featured-video-posts-slide owl-carousel">
 
                             <div class="single--slide">
-                                <!-- Single Blog Post -->
+                                @foreach ($lates as $late)
                                 <div class="single-blog-post d-flex style-3">
                                     <div class="post-thumbnail">
-                                        <img src="{{ url('frontend/img/bg-img/23.jpg') }}" alt="">
+                                        <img src="{{ $late->photo ? Storage::url($late->photo) : '' }}">
                                     </div>
                                     <div class="post-content">
-                                        <a href="single-post.html" class="post-title">Global Resorts Network Grn Putting Timeshares To Shame</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 234</a>
-                                        </div>
+                                        <a href="{{ route('artikel', $late->slug) }}" class="post-title">{{ $late->title }}</a>
                                     </div>
                                 </div>
+                                @endforeach
 
                                 <!-- Single Blog Post -->
                                 <div class="single-blog-post d-flex style-3">
@@ -182,7 +155,7 @@
                                         <img src="{{ url('frontend/img/bg-img/24.jpg') }}" alt="">
                                     </div>
                                     <div class="post-content">
-                                        <a href="single-post.html" class="post-title">A Guide To Rocky Mountain Vacations</a>
+                                        <a href="single-post.html" class="post-title">kepin</a>
                                         <div class="post-meta d-flex">
                                             <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 1034</a>
                                             <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 834</a>

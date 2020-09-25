@@ -41,6 +41,12 @@
       <span>Cabang Olahraga</span></a>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('news.index') }}">
+      <i class="fas fa-fw fa-file-alt"></i>
+      <span>Berita</span></a>
+  </li>
+
   <!-- Nav Item - Tables -->
   <li class="nav-item">
     <a class="nav-link" href="tables.html">

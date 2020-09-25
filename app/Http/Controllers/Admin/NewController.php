@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PostRequest;
-use App\Models\Post;
+use App\Http\Requests\NewRequest;
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use RealRashid\SweetAlert\Facades\Alert;
 
-class PostController extends Controller
+class NewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +17,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        $items = Post::all();
-
-        return view('pages.admin.post.index')->with([
-            'items' => $items
-        ]);
+			$items = News::latest()->get();
+      return view('pages.admin.news.index', [
+				'items' => $items
+			]);
     }
 
     /**
@@ -32,7 +30,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.post.create');
+      return view('pages.admin.news.create');
     }
 
     /**
@@ -41,21 +39,16 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(NewRequest $request)
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
-        // $data['photo'] = $request->file('photo')->store(
-        //     'assets/post', 'public'
-        // );
+        $data['photo'] = $request->file('photo')->store(
+            'assets/news', 'public'
+        );
 
-        $data['photo'] = $request->file('photo') ? $request->file('photo')->store('assets/post', 'public') : null;
-
-        Post::create($data);
-
-        Alert::success('Selamat', 'Data Berhasil Ditambahkan');
-
-        return redirect()->route('post.index');
+        News::create($data);
+        return redirect()->route('news.index');
     }
 
     /**
@@ -77,11 +70,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $item = Post::findOrFail($id);
-
-        return view('pages.admin.post.edit',[
-            'item' => $item
-        ]);
+        //
     }
 
     /**
@@ -91,16 +80,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $data['slug'] = Str::slug($request->title);
-
-        $item = Post::findOrFail($id);
-
-        $item->update($data);
-
-        return redirect()->route('post.index');
+        //
     }
 
     /**
@@ -111,10 +93,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $item = Post::findOrFail($id);
-
-        $item->delete();
-
-        return redirect()->route('post.index');
+        //
     }
 }
