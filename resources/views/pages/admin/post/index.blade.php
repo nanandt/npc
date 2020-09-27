@@ -21,18 +21,17 @@
               <tr>
                 <th>ID</th>
                 <th>Judul</th>
-                <th>Body</th>
+                <th>Isi</th>
                 <th>Foto</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               @forelse ($items as $item)
-              {{-- $items diambil dri travelpacakgecontroller di fungsi index --}}
               <tr>
                 <td>{{ $item->post_id }}</td>
                 <td>{{ $item->title }}</td>
-                <td>{{ $item->body }}</td>
+                <td>{{ Str::limit($item->body, 60, '') }}</td>
                 <td>
                   <img src="{{ Storage::url($item->photo) }}" style="width:150px"
                     class="img-thumbnail">

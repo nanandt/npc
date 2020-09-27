@@ -27,7 +27,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="nav-item active">
+                                    <li class="nav-item {{ request()->is('/') ? ' active' : '' }}">
                                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="#">Cabang Olahraga</a>
@@ -118,10 +118,10 @@
                                             <li><a href="video.html">VIDEO</a></li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="berita.html">Berita</a></li>
+                                    <li class="nav-item {{ request()->is('berita') ? ' active' : '' }}"><a class="nav-link" href="{{ route('berita') }}">Berita</a></li>
                                     <li class="nav-item"><a class="nav-link" href="jadwal.html">Jadwal Latihan</a></li>
                                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                                    <li class="nav-item {{ request()->is('contact') ? ' active' : '' }}"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->

@@ -1,7 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\{DashboardController, PostController, MessageController, CabangOlahragaController, NewController};
-use App\Http\Controllers\{HomeController, ArtikelController, ContactController};
+use App\Http\Controllers\Admin\{
+    DashboardController,
+    PostController,
+    MessageController,
+    CabangOlahragaController,
+    NewController};
+use App\Http\Controllers\{HomeController, ArtikelController, ContactController, BeritaController};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +24,16 @@ Route::get('/', [HomeController::class, 'index'])
                 ->name('home');
 
 Route::get('/artikel/{slug}', [ArtikelController::class, 'new'])
-				->name('artikel');
+                ->name('artikel');
+
+Route::get('/berita', [BeritaController::class, 'index'])
+                ->name('berita');
+
+Route::get('/berita/{slug}', [BeritaController::class, 'index'])
+				->name('berita.show');
 
 Route::get('/contact', [ContactController::class, 'index'])
-				->name('contact');
+                ->name('contact');
 
 Route::post('/contact', [ContactController::class, 'create'])
         ->name('contact-create');

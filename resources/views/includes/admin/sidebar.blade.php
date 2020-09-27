@@ -23,7 +23,7 @@
   <hr class="sidebar-divider">
 
   <!-- Nav Item - Charts -->
-  <li class="nav-item {{ request()->is('post') ? ' active' : '' }}">
+  <li class="nav-item {{ request()->is('') ? ' active' : '' }}">
     <a class="nav-link" href="{{ route('post.index') }}">
       <i class="fas fa-fw fa-newspaper"></i>
       <span>Artikel</span></a>

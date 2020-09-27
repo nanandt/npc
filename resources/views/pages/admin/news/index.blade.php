@@ -28,7 +28,6 @@
             </thead>
             <tbody>
               @forelse ($items as $item)
-              {{-- $items diambil dri travelpacakgecontroller di fungsi index --}}
               <tr>
                 <td>{{ $item->berita_id }}</td>
                 <td>{{ $item->judul }}</td>
