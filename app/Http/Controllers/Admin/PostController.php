@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $items = Post::all();
+        $items = Post::orderBy('post_id', 'desc')->get();
 
         return view('pages.admin.post.index')->with([
             'items' => $items
@@ -45,11 +45,11 @@ class PostController extends Controller
     {
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
-        // $data['photo'] = $request->file('photo')->store(
-        //     'assets/post', 'public'
-        // );
+        $data['photo'] = $request->file('photo')->store(
+            'assets/post', 'public'
+        );
 
-        $data['photo'] = $request->file('photo') ? $request->file('photo')->store('assets/post', 'public') : null;
+        // $data['photo'] = $request->file('photo') ? $request->file('photo')->store('assets/post', 'public') : null;
 
         Post::create($data);
 
@@ -100,6 +100,9 @@ class PostController extends Controller
 
         $item->update($data);
 
+        Alert::info('Selamat', 'Data Berhasil Diedit');
+
+
         return redirect()->route('post.index');
     }
 
@@ -114,6 +117,8 @@ class PostController extends Controller
         $item = Post::findOrFail($id);
 
         $item->delete();
+
+        Alert::warning('Selamat', 'Data Berhasil Dihapus');
 
         return redirect()->route('post.index');
     }

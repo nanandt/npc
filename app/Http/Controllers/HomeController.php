@@ -11,10 +11,13 @@ class HomeController extends Controller
     {
         $lates = Post::latest()->skip(5)->take(5)->get();
 
+        $randoms = Post::inRandomOrder()->take(5)->get();
+
         $items = Post::latest()->limit(5)->get();
         return view('pages.home', [
             'items' => $items,
-            'lates' => $lates
+            'lates' => $lates,
+            'randoms' => $randoms
         ]);
     }
 }

@@ -16,7 +16,7 @@
     <div class="row">
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-bordered" width="100%" cellspacing="0">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
                 <th>ID</th>
@@ -34,7 +34,7 @@
                 <td>{{ $item->title }}</td>
                 <td>{{ $item->body }}</td>
                 <td>
-                  <img src="{{ Storage::url($item->photo) }}" alt="" style="width:150px"
+                  <img src="{{ Storage::url($item->photo) }}" style="width:150px"
                     class="img-thumbnail">
                 </td>
                 <td>

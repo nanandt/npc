@@ -7,6 +7,8 @@ use App\Http\Requests\NewRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class NewController extends Controller
 {
@@ -93,6 +95,12 @@ class NewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = News::findOrFail($id);
+
+        $item->delete();
+
+        Alert::warning('Selamat', 'Data Berhasil Dihapus');
+
+        return redirect()->route('news.index');
     }
 }
