@@ -1,14 +1,14 @@
 @extends('layouts.default')
-@section('title', 'Artikel')
+@section('title', 'About')
 
 @section('content')
 <!-- ##### Breadcrumb Area Start ##### -->
-<section class="breadcrumb-area bg-img bg-overlay" style="background-image: url({{ Storage::url($item->photo) }});">
+<section class="breadcrumb-area bg-img bg-overlay" style="background-image: url({{ 'frontend/img/bg-img/40.jpg' }});">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="breadcrumb-content">
-                    <h2>ISI BERITA</h2>
+                    <h2>ABOUT US</h2>
                 </div>
             </div>
         </div>
@@ -24,8 +24,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Berita</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Isi Berita</li>
+                        <li class="breadcrumb-item active" aria-current="page">About</li>
                     </ol>
                 </nav>
             </div>
@@ -34,41 +33,32 @@
 </div>
 <!-- ##### Breadcrumb Area End ##### -->
 
-<!-- ##### Post Details Area Start ##### -->
-<section class="post-details-area">
+<!-- ##### About Us Area Start ##### -->
+<section class="about-us-area">
     <div class="container">
         <div class="row justify-content-center">
-            <!-- Post Details Content Area -->
             <div class="col-12 col-xl-8">
-                <div class="post-details-content bg-white mb-30 p-30 box-shadow">
-                    <div class="blog-thumb mb-30">
-                        <img src="{{ Storage::url($item->photo) }}" alt="">
+                <!-- About Us Content -->
+                <div class="about-us-content bg-white mb-30 p-30 box-shadow">
+                    <!-- Section Title -->
+                    <div class="section-heading">
+                        <h5>About Us</h5>
                     </div>
-                    <div class="blog-content">
-                        <div class="post-meta">
-                            <a href="#">{{ $item->created_at->isoFormat('D MMMM Y') }}</a>
-                        </div>
-                        <h4 class="post-title">{{ $item->title }}</h4>
-
-                        <p>
-                            {{ $item->body }}
-                        </p>
-
-                        <!-- Like Dislike Share -->
-                        <div class="like-dislike-share my-5">
-                            <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Share on Facebook</a>
-                            <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
-                        </div>
-                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur mauris id scelerisque eleifend. Nunc vestibulum cursus quam at scelerisque. Aliquam quis varius orci, vel tincidunt est. Proin ac tincidunti, atmots interdum erat. Maecenas neque lorem, aliquet in tempus non, efficitur ac neque.</p>
+                    <p>Phasellus elefend odio quis dolor pretium condimentu. Morbi quis mauris ipsum urna eu fermentum bentons Suspendisse auctor magna ac porta ornare. Fusce finibus nibh at lacinia lobortis.</p>
+                    <ul>
+                        <li><i class="fa fa-check"></i> Vivamus starlord finibus, dictum massa eget, suscipit metus nami at tristique elit started.</li>
+                        <li><i class="fa fa-check"></i> Cras ipsum libero, suscipit vitamin tellus vitae, feugiat ultricies purus praesent gamora.</li>
+                        <li><i class="fa fa-check"></i> Proin ex sem, ultrices drax the sit amet, facilisis destroyer et odio profession risusest.</li>
+                        <li><i class="fa fa-check"></i> Morbi maximus mauris eget groot dignissim, in laoreet justo facilisis.</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Sidebar Widget -->
             <div class="col-12 col-md-6 col-lg-5 col-xl-4">
                 <div class="sidebar-area bg-white mb-30 box-shadow">
-
-                        <!-- Sidebar Widget -->
-                        <div class="single-sidebar-widget p-30">
+                    <!-- Sidebar Widget -->
+                    <div class="single-sidebar-widget p-30">
                         <!-- Social Followers Info -->
                         <div class="social-followers-info">
                             <!-- Instagram -->
@@ -80,7 +70,7 @@
                             <!-- YouTube -->
                             <a href="#" class="youtube-subscribers"><i class="fa fa-youtube"></i>YouTube</a>
                             <!-- Google -->
-                            <a href="#" class="google-followers"><i class="fa fa-google-plus"></i>Google</a>
+                            <a href="#" class="google-followers"><i class="fa fa-google"></i>Gmail</a>
                         </div>
                     </div>
                 </div>
@@ -88,5 +78,5 @@
         </div>
     </div>
 </section>
-<!-- ##### Post Details Area End ##### -->
+<!-- ##### About Us Area End ##### -->
 @endsection

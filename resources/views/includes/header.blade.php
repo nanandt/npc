@@ -120,7 +120,7 @@
                                     </li>
                                     <li class="nav-item {{ request()->is('berita') ? ' active' : '' }}"><a class="nav-link" href="{{ route('berita') }}">Berita</a></li>
                                     <li class="nav-item"><a class="nav-link" href="jadwal.html">Jadwal Latihan</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                                    <li class="nav-item {{ request()->is('about') ? ' active' : '' }}"><a class="nav-link" href="{{ route('about') }}">About</a></li>
                                     <li class="nav-item {{ request()->is('contact') ? ' active' : '' }}"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </div>

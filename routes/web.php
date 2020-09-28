@@ -5,8 +5,15 @@ use App\Http\Controllers\Admin\{
     PostController,
     MessageController,
     CabangOlahragaController,
-    NewController};
-use App\Http\Controllers\{HomeController, ArtikelController, ContactController, BeritaController};
+    NewController
+};
+use App\Http\Controllers\{
+    HomeController,
+    ArtikelController,
+    ContactController,
+    BeritaController,
+    AboutController
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +37,10 @@ Route::get('/berita', [BeritaController::class, 'index'])
                 ->name('berita');
 
 Route::get('/berita/{slug}', [BeritaController::class, 'index'])
-				->name('berita.show');
+                ->name('berita.show');
+
+Route::get('/about', [AboutController::class, 'index'])
+				->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])
                 ->name('contact');
