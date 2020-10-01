@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
           <label for="body">Body</label>
-          <textarea type="text" class="form-control @error('body') is-invalid @enderror" name="body">{{ $item->body }}</textarea>
+          <textarea type="text" rows="10" class="form-control @error('body') is-invalid @enderror" name="body">{{ $item->body }}</textarea>
           @error('title')
           <div class="invalid-feedback">
             {{ $message }}

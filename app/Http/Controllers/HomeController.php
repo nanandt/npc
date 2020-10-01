@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CabangOlahraga;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -9,6 +10,8 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
+        $cabors = CabangOlahraga::all();
+
         $lates = Post::latest()->skip(5)->take(5)->get();
 
         $randoms = Post::inRandomOrder()->take(5)->get();
@@ -17,7 +20,8 @@ class HomeController extends Controller
         return view('pages.home', [
             'items' => $items,
             'lates' => $lates,
-            'randoms' => $randoms
+            'randoms' => $randoms,
+            'cabors' => $cabors
         ]);
     }
 }

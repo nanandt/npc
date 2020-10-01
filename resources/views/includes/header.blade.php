@@ -31,85 +31,18 @@
                                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="#">Cabang Olahraga</a>
+
                                         <ul class="dropdown">
-                                            <li><a href="#">ATLETIK</a>
-                                                <ul class="dropdown">
+                                             {{-- @foreach ($cabors as $cabor) --}}
+
+                                            <li>
+                                              <a href="#">#</a>
+                                              <ul class="dropdown">
                                                 <li><a href="pemain_atletik.html">PEMAIN</a></li>
                                                 <li><a href="pelatih_atletik.html">PELATIH</a></li>
-                                                </ul>
+                                              </ul>
                                             </li>
-                                            <li><a href="#">CATUR</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_catur.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_catur.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item"><a href="#">BULU TANGKIS</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_bulutangkis.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_bulutangkis.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item"><a href="#">TENIS MEJA</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_tenismeja.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_tenismeja.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item"><a href="#">RENANG</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_renang.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_renang.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">PANAHAN</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_panahan.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_panahan.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">JUDO</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_judo.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_judo.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">MENEMBAK</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_menembak.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_menembak.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">GOALBALL</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_goalball.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_goalball.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">TENIS LAPANG</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_tenislapang.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_tenislapang.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">VOLI DUDUK</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_voliduduk.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_voliduduk.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">BALAP SEPEDA</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_balapsepeda.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_balapsepeda.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">ANGKAT BERAT</a>
-                                                <ul class="dropdown">
-                                                <li><a href="pemain_angkatberat.html">PEMAIN</a></li>
-                                                <li><a href="pelatih_angkatberat.html">PELATIH</a></li>
-                                                </ul>
-                                            </li>
+                                            {{-- @endforeach --}}
                                         </ul>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="#">Galeri</a>
