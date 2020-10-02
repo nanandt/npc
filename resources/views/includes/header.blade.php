@@ -33,16 +33,15 @@
                                     <li class="nav-item"><a class="nav-link" href="#">Cabang Olahraga</a>
 
                                         <ul class="dropdown">
-                                             {{-- @foreach ($cabors as $cabor) --}}
-
+                                             @foreach ($cabors as $cabor)
                                             <li>
-                                              <a href="#">#</a>
+                                              <a href="#">{{ $cabor->nama }}</a>
                                               <ul class="dropdown">
-                                                <li><a href="pemain_atletik.html">PEMAIN</a></li>
+                                                <li><a href="{{ route('cabor-pemain', $cabor->cabang_olahraga_id, $cabor->nama) }}">PEMAIN</a></li>
                                                 <li><a href="pelatih_atletik.html">PELATIH</a></li>
                                               </ul>
                                             </li>
-                                            {{-- @endforeach --}}
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="#">Galeri</a>

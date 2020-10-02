@@ -12,7 +12,8 @@ use App\Http\Controllers\{
     ArtikelController,
     ContactController,
     BeritaController,
-    AboutController
+    AboutController,
+    PemainController
 };
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,9 @@ Route::get('/', [HomeController::class, 'index'])
 
 Route::get('/artikel/{slug}', [ArtikelController::class, 'new'])
                 ->name('artikel');
+
+Route::get('/cabang-olahraga/{cabang_olahraga_id}/pemain', [PemainController::class, 'index'])
+                ->name('cabor-pemain');
 
 Route::get('/berita', [BeritaController::class, 'index'])
                 ->name('berita');

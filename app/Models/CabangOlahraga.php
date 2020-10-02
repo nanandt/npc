@@ -21,7 +21,7 @@ class CabangOlahraga extends Model
 
     public function pemains()
     {
-        return $this->hasMany(Pemain::class, 'cabang_olahraga_id');
+        return $this->hasMany(Pemain::class, 'cabang_olahraga_id', 'cabang_olahraga_id');
     }
 
     public function pelatihs()

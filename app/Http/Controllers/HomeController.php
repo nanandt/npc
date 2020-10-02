@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $cabors = CabangOlahraga::all();
+        $cabors = CabangOlahraga::with('pemains')->get();
 
         $lates = Post::latest()->skip(5)->take(5)->get();
 
