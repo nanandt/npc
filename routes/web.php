@@ -5,7 +5,8 @@ use App\Http\Controllers\Admin\{
     PostController,
     MessageController,
     CabangOlahragaController,
-    NewController
+    NewController,
+    PlayerController
 };
 use App\Http\Controllers\{
     HomeController,
@@ -62,6 +63,7 @@ Route::prefix('admin')
           Route::resource('messages', MessageController::class);
           Route::resource('cabang-olahraga', CabangOlahragaController::class);
           Route::resource('news', NewController::class);
+          Route::resource('players', PlayerController::class);
         });
 
 

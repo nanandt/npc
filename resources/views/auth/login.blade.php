@@ -47,7 +47,7 @@
     </x-jet-authentication-card>
 </x-guest-layout> --}}
 
-@extends('layouts.default')
+@extends('layouts.login')
 
 @section('content')
 <!-- ##### Breadcrumb Area Start ##### -->

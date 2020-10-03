@@ -13,8 +13,8 @@
       <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Title" value="{{ old('title') }}">
+          <label for="title">Judul</label>
+          <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Judul" value="{{ old('title') }}">
           @error('title')
           <div class="invalid-feedback">
             {{ $message }}
@@ -31,7 +31,7 @@
         <div class="form-group">
           <label for="body">Body</label>
           <textarea type="text" rows="10" class="form-control @error('body') is-invalid @enderror" name="body" placeholder="Body" value="{{ old('body') }}"></textarea>
-          @error('title')
+          @error('body')
           <div class="invalid-feedback">
             {{ $message }}
             </div>

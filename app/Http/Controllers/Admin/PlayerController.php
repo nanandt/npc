@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PostRequest;
-use App\Models\Post;
+use App\Http\Requests\PlayerRequest;
+use App\Models\CabangOlahraga;
+use App\Models\Pemain;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class PostController extends Controller
+
+class PlayerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +21,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $items = Post::orderBy('post_id', 'desc')->get();
-
-        return view('pages.admin.post.index')->with([
+        $items = Pemain::with('cabang_olahraga')->get();
+        return view('pages.admin.players.index',[
             'items' => $items
         ]);
     }
@@ -32,7 +34,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.post.create');
+        $cabors = CabangOlahraga::all();
+        return view('pages.admin.players.create',[
+            'cabors' => $cabors
+        ]);
     }
 
     /**
@@ -41,21 +46,19 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(PlayerRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->title);
-        $data['photo'] = $request->file('photo')->store(
-            'assets/post', 'public'
+        $data['slug'] = Str::slug($request->nama_pemain);
+        $data['thumbnail'] = $request->file('thumbnail')->store(
+            'assets/player', 'public'
         );
 
-        // $data['photo'] = $request->file('photo') ? $request->file('photo')->store('assets/post', 'public') : null;
-
-        Post::create($data);
+        Pemain::create($data);
 
         Alert::success('Selamat', 'Data Berhasil Ditambahkan');
 
-        return redirect()->route('post.index');
+        return redirect()->route('players.index');
     }
 
     /**
@@ -77,10 +80,12 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $item = Post::findOrFail($id);
+        $item = Pemain::findOrFail($id);
+        $cabors = CabangOlahraga::all();
 
-        return view('pages.admin.post.edit',[
-            'item' => $item
+        return view('pages.admin.players.edit', [
+            'item' => $item,
+            'cabors' => $cabors
         ]);
     }
 
@@ -91,19 +96,20 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostRequest $request, $id)
+    public function update(PlayerRequest $request, $id)
     {
-        $data = $request->all();
-        $data['slug'] = Str::slug($request->title);
 
-        $item = Post::findOrFail($id);
+        $data = $request->all();
+
+        $data['thumbnail'] = $request->file('thumbnail')->store('assets/player', 'public');
+
+        $item = Pemain::findOrFail($id);
 
         $item->update($data);
 
         Alert::info('Selamat', 'Data Berhasil Diedit');
 
-
-        return redirect()->route('post.index');
+        return redirect()->route('players.index');
     }
 
     /**
@@ -114,12 +120,13 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $item = Post::findOrFail($id);
+        $item = Pemain::find($id);
+
 
         $item->delete();
 
         Alert::success('Selamat', 'Data Berhasil Dihapus');
 
-        return redirect()->route('post.index');
+        return redirect()->route('players.index');
     }
 }
