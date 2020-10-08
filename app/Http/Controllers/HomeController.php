@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $cabors = CabangOlahraga::with('pemains')->get();
+        $cabors = CabangOlahraga::with('pemains', 'pelatihs')->get();
 
         $lates = Post::latest()->skip(5)->take(5)->get();
 

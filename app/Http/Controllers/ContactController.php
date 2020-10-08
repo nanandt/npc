@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-      $cabors = CabangOlahraga::all();
+      $cabors = CabangOlahraga::with('pemains', 'pelatihs')->get();
       return view('pages.contact',[
          'cabors' => $cabors
       ]);

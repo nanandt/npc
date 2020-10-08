@@ -41,10 +41,11 @@
                 <div class="archive-posts-area bg-white p-30 mb-30 box-shadow">
 
                     <!-- Single Catagory Post -->
+                    @foreach ($items as $item)
                     <div class="single-catagory-post d-flex flex-wrap">
                         <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/42.jpg);">
-                            <a href="single-post.html"></a>
+                        <div class="post-thumbnail bg-img" style="background-image: url({{ $item->photo ? Storage::url($item->photo) : '' }});">
+                            <a href="{{ route('artikel', $item->slug) }}"></a>
                         </div>
 
                         <!-- Post Contetnt -->
@@ -52,112 +53,12 @@
                             <div class="post-meta">
                                 <a href="#">MAY 8, 2018</a>
                             </div>
-                            <a href="single-post.html" class="post-title">Global Travel And Vacations Luxury Travel On A Tight Budget</a>
+                            <a href="{{ route('artikel', $item->slug) }}" class="post-title">{{ $item->title }}</a>
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis lorem150</p>
                         </div>
                     </div>
+                    @endforeach
 
-                    <!-- Single Catagory Post -->
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/43.jpg);">
-                            <a href="single-post.html"></i></a>
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                            </div>
-                            <a href="single-post.html" class="post-title">The Luxury Of Traveling With Yacht Charter Companies</a>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis lorem150</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Catagory Post -->
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/44.jpg);">
-                            <a href="single-post.html"></i></a>
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                            </div>
-                            <a href="single-post.html" class="post-title">Will The Democrats Be Able To Reverse The Online Gambling Ban</a>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis lorem150</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Catagory Post -->
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/45.jpg);">
-                            <a href="single-post.html"></i></a>
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                            </div>
-                            <a href="single-post.html" class="post-title">Family Safari Vacation To The Home Of The Gods</a>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis lorem150</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Catagory Post -->
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/46.jpg);">
-                            <a href="single-post.html"></i></a>
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                            </div>
-                            <a href="single-post.html" class="post-title">Addiction When Gambling Becomes A Problem</a>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis lorem150</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Catagory Post -->
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/47.jpg);">
-                            <a href="single-post.html"></i></a>
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                            </div>
-                            <a href="single-post.html" class="post-title">Take A Romantic Break In A Boutique Hotel</a>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis lorem150</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Catagory Post -->
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url(img/bg-img/48.jpg);">
-                            <a href="single-post.html"></i></a>
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
-                            </div>
-                            <a href="single-post.html" class="post-title">Global Travel And Vacations Luxury Travel On A Tight Budget</a>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis lorem150</p>
-                        </div>
-                    </div>
 
                     <!-- Pagination -->
                     <nav>
