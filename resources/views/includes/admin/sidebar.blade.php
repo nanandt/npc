@@ -42,12 +42,6 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="{{ route('news.index') }}">
-      <i class="fas fa-fw fa-file-alt"></i>
-      <span>Berita</span></a>
-  </li>
-
-  <li class="nav-item">
     <a class="nav-link" href="{{ route('players.index') }}">
       <i class="fas fa-fw fa-file-alt"></i>
       <span>Pemain</span></a>
