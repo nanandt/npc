@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\CabangOlahraga;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CabangOlahragaController extends Controller
 {
@@ -47,6 +48,8 @@ class CabangOlahragaController extends Controller
       $data = $request->all();
 
       CabangOlahraga::create($data);
+
+      Alert::success('Selamat', 'Data Berhasil Ditambahkan');
 
       return redirect()->route('cabang-olahraga.index');
 
@@ -93,6 +96,8 @@ class CabangOlahragaController extends Controller
 
         $item->update($data);
 
+        Alert::info('Selamat', 'Data Berhasil Diupdate');
+
         return redirect()->route('cabang-olahraga.index');
     }
 
@@ -107,6 +112,8 @@ class CabangOlahragaController extends Controller
       $item = CabangOlahraga::findOrFail($id);
 
       $item->delete();
+
+      Alert::warning('Selamat', 'Data Berhasil Dihapus');
 
       return redirect()->route('cabang-olahraga.index');
 

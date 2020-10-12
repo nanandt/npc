@@ -51,7 +51,7 @@
                         <!-- Post Contetnt -->
                         <div class="post-content">
                             <div class="post-meta">
-                                <a href="#">MAY 8, 2018</a>
+                                <a href="#">{{ $item->created_at->isoFormat('D MMMM Y') }}</a>
                             </div>
                             <a href="{{ route('artikel', $item->slug) }}" class="post-title">{{ $item->title }}</a>
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa officia deserunt mollit anim id est laborum. Sed ut perspiciatis lorem150</p>
@@ -61,15 +61,19 @@
 
 
                     <!-- Pagination -->
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="ti-angle-right"></i></a></li>
-                        </ul>
-                    </nav>
+                    <div>
+                        <nav>
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    {{ $items->links('pagination::bootstrap-4') }}
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    {{-- <div>
+                    {{ $items->links() }}
 
+                    </div> --}}
                 </div>
             </div>
 

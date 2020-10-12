@@ -34,7 +34,7 @@ Route::get('/', [HomeController::class, 'index'])
 Route::get('/artikel/{slug}', [ArtikelController::class, 'new'])
                 ->name('artikel');
 
-Route::get('/cabang-olahraga/{nama}/pemain', [PemainController::class, 'index'])
+Route::get('/cabang-olahraga/{cabang_olahraga_id}/pemain', [PemainController::class, 'index'])
                 ->name('cabor-pemain');
 
 Route::get('/berita', [BeritaController::class, 'index'])

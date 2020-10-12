@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title', 'Contact')
+
 @section('content')
 <!-- ##### Breadcrumb Area Start ##### -->
 <section class="breadcrumb-area bg-img bg-overlay" style="background-image: url({{ 'frontend/img/bg-img/40.jpg' }});">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Message;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MessageController extends Controller
 {
@@ -84,6 +85,12 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Message::findOrFail($id);
+
+        $item->delete();
+
+        Alert::warning('Selamat', 'Data Berhasil Dihapus');
+
+        return redirect()->route('messages.index');
     }
 }

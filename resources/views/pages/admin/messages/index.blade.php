@@ -15,7 +15,7 @@
           <table class="table table-bordered" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>ID</th>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Email</th>
                 <th>Pesan</th>
@@ -31,9 +31,6 @@
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->pesan }}</td>
                 <td>
-                  <a href="{{ route('messages.edit', $item->message_id) }}" class="btn btn-info">
-                    <i class="fa fa-pencil-alt"></i>
-                  </a>
                   <form action="{{ route('messages.destroy', $item->message_id) }}" method="POST"
                     class="d-inline">
                     @csrf
