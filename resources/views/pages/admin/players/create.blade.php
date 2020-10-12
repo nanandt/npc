@@ -28,7 +28,7 @@
                     <option value="">Pilih Cabang Olahraga</option>
                     @foreach ($cabors as $cabor)
                         <option value="{{ $cabor->cabang_olahraga_id}} ">
-                        {{ $cabor->nama }}
+                        {{ $cabor->nama_cabor }}
                         </option>
                     @endforeach
                     </select>

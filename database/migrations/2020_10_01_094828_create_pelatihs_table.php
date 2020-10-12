@@ -22,6 +22,8 @@ class CreatePelatihsTable extends Migration
 
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('cabang_olahraga_id')->references('cabang_olahraga_id')->on('cabang_olahragas')->onDelete('cascade');
+
         });
     }
 

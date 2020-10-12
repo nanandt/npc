@@ -13,9 +13,9 @@
       <form action="{{ route('cabang-olahraga.store') }}" method="POST">
         @csrf
         <div class="form-group">
-          <label for="nama">Nama Cabang Olahraga</label>
-          <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" placeholder="Cabang Olaraga" value="{{ old('nama') }}">
-          @error('nama')
+          <label for="nama_cabor">Nama Cabang Olahraga</label>
+          <input type="text" class="form-control @error('nama_cabor') is-invalid @enderror" name="nama_cabor" placeholder="Cabang Olaraga" value="{{ old('nama_cabor') }}">
+          @error('nama_cabor')
           <div class="invalid-feedback">
             {{ $message }}
             </div>

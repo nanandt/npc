@@ -14,9 +14,9 @@
         @method('PUT')
         @csrf
         <div class="form-group">
-          <label for="nama">Nama</label>
-          <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="{{ $item->nama }}">
-          @error('nama')
+          <label for="nama_cabor">Nama</label>
+          <input type="text" class="form-control @error('nama_cabor') is-invalid @enderror" name="nama_cabor" value="{{ $item->nama_cabor }}">
+          @error('nama_cabor')
           <div class="invalid-feedback">
             {{ $message }}
             </div>

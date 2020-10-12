@@ -32,7 +32,7 @@
                 <tr>
                     <td>{{ $item->pemain_id }}</td>
                     <td>{{ $item->nama_pemain }}</td>
-                    <td>{{ $item->cabang_olahraga->nama }}</td>
+                    <td>{{ $item->cabang_olahraga->nama_cabor }}</td>
                     <td>
                     <img src="{{ Storage::url($item->thumbnail) }}" style="width:150px"
                         class="img-thumbnail">

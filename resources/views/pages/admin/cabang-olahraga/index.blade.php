@@ -28,7 +28,7 @@
               @forelse ($items as $item)
               <tr>
                 <td>{{ $item->cabang_olahraga_id }}</td>
-                <td>{{ $item->nama }}</td>
+                <td>{{ $item->nama_cabor }}</td>
                 <td>
                   <a href="{{ route('cabang-olahraga.edit', $item->cabang_olahraga_id) }}" class="btn btn-info">
                     <i class="fa fa-pencil-alt"></i>

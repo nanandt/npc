@@ -13,7 +13,7 @@ class CabangOlahraga extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['nama'];
+    protected $fillable = ['nama_cabor'];
 
     protected $hidden = [];
 

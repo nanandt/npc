@@ -41,7 +41,7 @@ class CabangOlahragaController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-        'nama' => 'required'
+        'nama_cabor' => 'required'
       ]);
 
       $data = $request->all();
@@ -108,7 +108,7 @@ class CabangOlahragaController extends Controller
 
       $item->delete();
 
-    	return redirect()->route('cabang-olahraga.index');
+      return redirect()->route('cabang-olahraga.index');
 
     }
 }
