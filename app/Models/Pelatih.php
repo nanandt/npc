@@ -12,7 +12,7 @@ class Pelatih extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['cabang_olahraga_id', 'nama_pelatih', 'slug', 'thumbnail'];
+    protected $fillable = ['cabang_olahraga_id', 'nama_pelatih','thumbnail'];
 
     protected $primaryKey = 'pelatih_id';
 

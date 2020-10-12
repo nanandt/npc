@@ -17,7 +17,6 @@ class CreatePemainsTable extends Migration
             $table->bigIncrements('pemain_id');
             $table->unsignedBigInteger('cabang_olahraga_id');
             $table->string('nama_pemain');
-            $table->string('slug');
             $table->string('thumbnail')->nullable();
 
             $table->softDeletes();

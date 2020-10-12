@@ -14,7 +14,7 @@ class CreateCabangOlahragasTable extends Migration
     public function up()
     {
         Schema::create('cabang_olahragas', function (Blueprint $table) {
-            $table->bigIncrements('cabang_olahraga_id');
+            $table->id('cabang_olahraga_id');
             $table->string('nama_cabor', 100);
 
             $table->softDeletes();

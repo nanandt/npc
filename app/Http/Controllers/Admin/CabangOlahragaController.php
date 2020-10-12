@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CabangOlahraga;
+use App\Models\Pelatih;
+use App\Models\Pemain;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 

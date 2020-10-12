@@ -15,15 +15,13 @@ class CreatePelatihsTable extends Migration
     {
         Schema::create('pelatihs', function (Blueprint $table) {
             $table->bigIncrements('pelatih_id');
-            $table->foreignId('cabang_olahraga_id');
+            $table->unsignedBigInteger('cabang_olahraga_id');
             $table->string('nama_pelatih');
-            $table->string('slug');
             $table->string('thumbnail')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
             $table->foreign('cabang_olahraga_id')->references('cabang_olahraga_id')->on('cabang_olahragas')->onDelete('cascade');
-
         });
     }
 

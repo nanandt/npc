@@ -12,7 +12,7 @@ class Pemain extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['cabang_olahraga_id', 'nama_pemain', 'slug', 'thumbnail'];
+    protected $fillable = ['cabang_olahraga_id', 'nama_pemain', 'thumbnail'];
 
     protected $primaryKey = 'pemain_id';
 
@@ -20,4 +20,5 @@ class Pemain extends Model
     {
         return $this->belongsTo(CabangOlahraga::class, 'cabang_olahraga_id');
     }
+
 }
