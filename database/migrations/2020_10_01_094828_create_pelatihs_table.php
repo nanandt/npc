@@ -14,13 +14,13 @@ class CreatePelatihsTable extends Migration
     public function up()
     {
         Schema::create('pelatihs', function (Blueprint $table) {
-            $table->bigIncrements('pelatih_id');
-            $table->unsignedBigInteger('cabang_olahraga_id');
+            $table->id('pelatih_id');
             $table->string('nama_pelatih');
             $table->string('thumbnail')->nullable();
-
             $table->softDeletes();
             $table->timestamps();
+
+            $table->unsignedBigInteger('cabang_olahraga_id');
             $table->foreign('cabang_olahraga_id')->references('cabang_olahraga_id')->on('cabang_olahragas')->onDelete('cascade');
         });
     }

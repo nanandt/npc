@@ -26,7 +26,7 @@ class PemainSeeder extends Seeder
         $pemains->each(function($pemain){
             Pemain::create([
             'nama_pemain' => $pemain,
-            'cabang_olahraga_id' => rand(2, 15),
+            'cabang_olahraga_id' => rand(2, 13),
             'thumbnail' => null,
             ]);
         });

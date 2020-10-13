@@ -18,7 +18,7 @@ class CabangOlahragaController extends Controller
      */
     public function index()
     {
-      $items = CabangOlahraga::latest()->get();
+      $items = CabangOlahraga::withTrashed()->latest()->get();
 
       return view('pages.admin.cabang-olahraga.index',[
         'items' => $items
@@ -109,9 +109,9 @@ class CabangOlahragaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($cabang_olahraga_id)
     {
-      $item = CabangOlahraga::findOrFail($id);
+      $item = CabangOlahraga::findOrFail($cabang_olahraga_id);
 
       $item->delete();
 

@@ -14,13 +14,13 @@ class CreatePemainsTable extends Migration
     public function up()
     {
         Schema::create('pemains', function (Blueprint $table) {
-            $table->bigIncrements('pemain_id');
-            $table->unsignedBigInteger('cabang_olahraga_id');
+            $table->id('pemain_id');
             $table->string('nama_pemain');
             $table->string('thumbnail')->nullable();
-
             $table->softDeletes();
             $table->timestamps();
+
+            $table->unsignedBigInteger('cabang_olahraga_id');
             $table->foreign('cabang_olahraga_id')->references('cabang_olahraga_id')->on('cabang_olahragas')->onDelete('cascade');
         });
     }
