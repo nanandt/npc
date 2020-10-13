@@ -14,7 +14,7 @@ class CreatePemainsTable extends Migration
     public function up()
     {
         Schema::create('pemains', function (Blueprint $table) {
-            $table->id('pemain_id');
+            $table->bigIncrements('pemain_id');
             $table->string('nama_pemain');
             $table->string('thumbnail')->nullable();
             $table->softDeletes();

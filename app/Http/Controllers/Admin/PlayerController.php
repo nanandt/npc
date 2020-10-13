@@ -21,7 +21,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $items = Pemain::with('cabang_olahraga')->withTrashed()->get();
+        $items = Pemain::with('cabang_olahraga')->get();
         return view('pages.admin.players.index',[
             'items' => $items
         ]);

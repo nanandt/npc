@@ -33,7 +33,7 @@
                   <a href="{{ route('cabang-olahraga.edit', $item->cabang_olahraga_id) }}" class="btn btn-info">
                     <i class="fa fa-pencil-alt"></i>
                   </a>
-                  <form action="{{ route('cabang-olahraga.destroy', $item->cabang_olahraga_id) }}" method="POST"
+                  <form action="{{ route('cabang-olahraga.destroy', $item->cabang_olahraga_id, $item->pemain_id) }}" method="POST"
                     class="d-inline">
                     @csrf
                     @method('delete')

@@ -18,7 +18,7 @@ class CabangOlahragaController extends Controller
      */
     public function index()
     {
-      $items = CabangOlahraga::withTrashed()->latest()->get();
+      $items = CabangOlahraga::with('pemains', 'pelatihs')->latest()->get();
 
       return view('pages.admin.cabang-olahraga.index',[
         'items' => $items
@@ -109,9 +109,15 @@ class CabangOlahragaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($cabang_olahraga_id)
+    public function destroy($id)
     {
-      $item = CabangOlahraga::findOrFail($cabang_olahraga_id);
+        $item_pemain = Pemain::where('cabang_olahraga_id', $id)->get();
+        foreach($item_pemain as $item)
+        {
+            $pemain = Pemain::findOrFail($item->pemain_id);
+            $pemain->delete();
+        }
+      $item = CabangOlahraga::findOrFail($id);
 
       $item->delete();
 

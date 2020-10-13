@@ -14,7 +14,7 @@ class CreatePelatihsTable extends Migration
     public function up()
     {
         Schema::create('pelatihs', function (Blueprint $table) {
-            $table->id('pelatih_id');
+            $table->bigIncrements('pelatih_id');
             $table->string('nama_pelatih');
             $table->string('thumbnail')->nullable();
             $table->softDeletes();
