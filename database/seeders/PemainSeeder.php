@@ -22,11 +22,18 @@ class PemainSeeder extends Seeder
             'Slamet Catur',
             'Wayu Catur',
             'Udin Catur',
+            'Bambang',
+            'Eka Rahayu',
+            'Eka Puji',
+            'Eka Putri',
+            'Eka Putra kedua',
+            'Eka Putra ketiga',
+            'Eka Putge',
         ]);
         $pemains->each(function($pemain){
             Pemain::create([
             'nama_pemain' => $pemain,
-            'cabang_olahraga_id' => rand(2, 13),
+            'cabang_olahraga_id' => mt_rand(2, 10),
             'thumbnail' => null,
             ]);
         });

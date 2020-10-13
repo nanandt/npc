@@ -117,6 +117,12 @@ class CabangOlahragaController extends Controller
             $pemain = Pemain::findOrFail($item->pemain_id);
             $pemain->delete();
         }
+        $item_pelatih = Pelatih::where('cabang_olahraga_id', $id)->get();
+        foreach($item_pelatih as $item)
+        {
+            $pelatih = Pelatih::findOrFail($item->pelatih_id);
+            $pelatih->delete();
+        }
       $item = CabangOlahraga::findOrFail($id);
 
       $item->delete();

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\CabangOlahraga;
+use App\Models\Pelatih;
 use Illuminate\Http\Request;
 
 class CoachController extends Controller
@@ -14,7 +16,10 @@ class CoachController extends Controller
      */
     public function index()
     {
-        //
+        $items = Pelatih::with('cabang_olahraga')->get();
+        return view('pages.admin.coachs.index', [
+            'items' => $items
+        ]);
     }
 
     /**
@@ -24,7 +29,10 @@ class CoachController extends Controller
      */
     public function create()
     {
-        //
+        $cabors = CabangOlahraga::all();
+        return view('pages.admin.coachs.create',[
+            'cabors' => $cabors
+        ]);
     }
 
     /**

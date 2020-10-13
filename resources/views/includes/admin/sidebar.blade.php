@@ -43,8 +43,13 @@
 
   <li class="nav-item">
     <a class="nav-link" href="{{ route('players.index') }}">
-      <i class="fas fa-fw fa-file-alt"></i>
+      <i class="fas fa-fw fa-users"></i>
       <span>Pemain</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('coachs.index') }}">
+      <i class="fas fa-fw fa-user"></i>
+      <span>Pelatih</span></a>
   </li>
 
   <!-- Nav Item - Tables -->
