@@ -13,9 +13,9 @@
                 <form action="{{ route('coachs.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="nama_pemain">Nama Pelatih</label>
-                    <input type="text" class="form-control @error('nama_pemain') is-invalid @enderror" name="nama_pemain" placeholder="Nama Pemain" value="{{ old('nama_pemain') }}">
-                    @error('nama_pemain')
+                    <label for="nama_pelatih">Nama Pelatih</label>
+                    <input type="text" class="form-control @error('nama_pelatih') is-invalid @enderror" name="nama_pelatih" placeholder="Nama pelatih" value="{{ old('nama_pelatih') }}">
+                    @error('nama_pelatih')
                     <div class="invalid-feedback">
                     {{ $message }}
                     </div>

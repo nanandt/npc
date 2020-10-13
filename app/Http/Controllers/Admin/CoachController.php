@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CoachRequest;
 use App\Models\CabangOlahraga;
 use App\Models\Pelatih;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CoachController extends Controller
 {
@@ -41,9 +43,18 @@ class CoachController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CoachRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['thumbnail'] = $request->file('thumbnail')->store(
+            'assets/coach', 'public'
+        );
+
+        Pelatih::create($data);
+
+        Alert::success('Selamat', 'Data Berhasil Ditambahkan');
+
+        return redirect()->route('coachs.index');
     }
 
     /**
@@ -65,7 +76,13 @@ class CoachController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Pelatih::findOrFail($id);
+        $cabors = CabangOlahraga::all();
+
+        return view('pages.admin.coachs.edit', [
+            'item' => $item,
+            'cabors' => $cabors
+        ]);
     }
 
     /**
@@ -75,9 +92,19 @@ class CoachController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CoachRequest $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $data['thumbnail'] = $request->file('thumbnail')->store('assets/coach', 'public');
+
+        $item = Pelatih::findOrFail($id);
+
+        $item->update($data);
+
+        Alert::info('Selamat', 'Data Berhasil Diedit');
+
+        return redirect()->route('coachs.index');
     }
 
     /**
@@ -88,6 +115,12 @@ class CoachController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Pelatih::find($id);
+
+        $item->delete();
+
+        Alert::success('Selamat', 'Data Berhasil Dihapus');
+
+        return redirect()->route('coachs.index');
     }
 }

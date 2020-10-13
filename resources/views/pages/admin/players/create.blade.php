@@ -35,8 +35,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="foto">Foto</label>
-                    <input type="file" class="form-control" name="thumbnail" placeholder="Foto">
+                    <label for="thumbnail">Foto</label>
+                    <input type="file" value="{{ old('thumbnail') }}" class="form-control @error('thumbnail') is-invalid @enderror" accept="image/*" name="thumbnail" placeholder="Foto">
+                    @error('thumbnail')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">

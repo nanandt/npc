@@ -26,10 +26,10 @@
         <div class="form-group">
             <label for="cabang_olahraga_id">Cabang Olahraga</label>
             <select name="cabang_olahraga_id" class="form-control">
-                <option value="{{ $item->cabang_olahraga_id }}">{{ $item->cabang_olahraga->nama }}</option>
+                <option value="{{ $item->cabang_olahraga_id }}">{{ $item->cabang_olahraga->nama_cabor }}</option>
                 @foreach ($cabors as $cabor)
                     <option value="{{ $cabor->cabang_olahraga_id }}">
-                        {{ $cabor->nama }}
+                        {{ $cabor->nama_cabor }}
                     </option>
                 @endforeach
             </select>
@@ -37,7 +37,12 @@
 
         <div class="form-group">
             <label for="thumbnail">Foto</label>
-            <input type="file" class="form-control" name="thumbnail" placeholder="Foto">
+            <input type="file" class="form-control @error('thumbnail')is-invalid @enderror" name="thumbnail" placeholder="Foto">
+            @error('thumbnail')
+            <div class="invalid-feedback">
+                {{ $message }}
+                </div>
+            @enderror
         </div>
 
         <button type="submit" class="btn btn-primary btn-block">

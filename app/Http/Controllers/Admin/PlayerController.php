@@ -49,7 +49,6 @@ class PlayerController extends Controller
     public function store(PlayerRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->nama_pemain);
         $data['thumbnail'] = $request->file('thumbnail')->store(
             'assets/player', 'public'
         );

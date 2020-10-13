@@ -38,10 +38,10 @@
                         class="img-thumbnail">
                     </td>
                     <td>
-                    <a href="{{ route('players.edit', $item->pelatih_id) }}" class="btn btn-info">
+                    <a href="{{ route('coachs.edit', $item->pelatih_id) }}" class="btn btn-info">
                         <i class="fa fa-pencil-alt"></i>
                     </a>
-                    <form action="{{ route('players.destroy', $item->pelatih_id) }}" method="POST"
+                    <form action="{{ route('coachs.destroy', $item->pelatih_id) }}" method="POST"
                         class="d-inline">
                         @csrf
                         @method('delete')
