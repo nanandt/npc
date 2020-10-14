@@ -14,7 +14,9 @@ use App\Http\Controllers\{
     ContactController,
     BeritaController,
     AboutController,
-    PemainController
+    PemainController,
+    PelatihController,
+    JadwalController
 };
 use Illuminate\Support\Facades\Route;
 
@@ -38,11 +40,17 @@ Route::get('/artikel/{slug}', [ArtikelController::class, 'new'])
 Route::get('/cabang-olahraga/{cabang_olahraga_id}/pemain', [PemainController::class, 'index'])
                 ->name('cabor-pemain');
 
+Route::get('/cabang-olahraga/{cabang_olahraga_id}/pelatih', [PelatihController::class, 'index'])
+                ->name('cabor-pelatih');
+
 Route::get('/berita', [BeritaController::class, 'index'])
                 ->name('berita');
 
 Route::get('/berita/{slug}', [BeritaController::class, 'index'])
                 ->name('berita.show');
+
+Route::get('/jadwal-latihan', [JadwalController::class, 'index'])
+                ->name('jadwal-latihan');
 
 Route::get('/about', [AboutController::class, 'index'])
 				->name('about');
